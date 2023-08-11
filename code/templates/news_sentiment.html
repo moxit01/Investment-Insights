@@ -1,0 +1,21 @@
+{% extends "origin.html" %}
+{% block heading %}
+News Sentiment
+{% endblock %}
+
+
+{% block body %}
+    <h1>News Sentiment</h1>
+
+    <form method="POST">
+        <label for="symbol">Symbol:</label>
+        <input type="text" id="symbol" name="symbol">
+        <input type="submit" value="Get News Sentiment">
+    </form>
+
+    {% for feed in feeds %}
+        <h2>{{ feed.title }}</h2>
+        <!-- <p>{{ feed.summary }}</p> -->
+        <h3>{{feed.ticker_sentiment}}</h3>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "origin.html" %}
+{% block heading %}
+News Sentiment
+{% endblock %}
+
+
+{% block body %}
+<h1>Stock Price Predictor</h1>
+<form method="POST">
+    <label for="symbol">Enter Stock Symbol:</label><br>
+    <input type="text" id="symbol" name="symbol"><br><br>
+
+    <label class="text">Time Period: </label>
+    <select class="form-control" name="period" id="period" data-toggle="popover">
+        <option value="6mo" selected>Past 6 Months</option>
+        <option value="1y">Past Year</option>
+        <option value="5y">Past 5 Years</option>
+        <option value="max">Maximum Duration</option>
+    </select><br><br>
+  
+    <label class="text">No of Simulations: </label>
+    <input class="form-control" name="no_sim" id="sim" type="number" min=1 max=10 value="5"><br><br>
+
+    <label class="text">No of Future Days: </label>
+    <input class="form-control" name="no_days" id="days" type="number" min=30 max=365 value="30"><br><br>
+    <input type="submit" value="Predict">
+</form>
+{% if prediction %}
+    <h2>Predicted Price: {{ prediction }}</h2>
+{% endif %}
+
+
+
+    <!-- {% for feed in feeds %}
+        <h2>{{ feed.title }}</h2>
+        <p>{{ feed.summary }}</p>
+    {% endfor %} -->
+{% endblock %}

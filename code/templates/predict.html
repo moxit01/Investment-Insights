@@ -1,0 +1,40 @@
+{% extends "template.html" %}
+{% block heading %}
+Predict
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 70rem;">
+                <div class="card-body">
+                    <form action="/predict" method="POST">
+                        {% csrf_token %}
+                        <input name="action" required readonly hidden value="add_card">
+                        <!-- Logo -->
+                        <div class="text-center">
+                            <img class="mb-4" src="../static/assets/logo.png" alt="" width="72" height="72">
+                        </div>
+
+                        <!-- Form fields -->
+
+                        <!-- Field 1 -->
+                        <div class="form-group">
+                            <label for="inputField1">Field 1</label>
+                            <input type="text" id="inputField1" class="form-control" placeholder="Enter field 1" required autofocus>
+                        </div>
+
+                        <!-- Field 2 -->
+                        <div class="form-group">
+                            <label for="inputField2">Field 2</label>
+                            <input type="text" id="inputField2" class="form-control" placeholder="Enter field 2" required>
+                        </div>
+
+                        <!-- Submit button -->
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Predict</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block heading %}{% endblock %}</title>
+    <link rel="icon" background-color="white" href="https://i.postimg.cc/nVWr0KqZ/logofull.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- <a class="navbar-brand" href="#">Investment Insight</a> -->
+        <a class="navbar-brand" href="/" id="home">
+            <img src="https://i.postimg.cc/nVWr0KqZ/logofull.png" height="40" width="150" class="d-inline-block align-top" alt="" loading="lazy">
+            <!-- <img src="https://i.postimg.cc/nVWr0KqZ/logofull.png" height="40" width="150" class="d-inline-block align-top" alt="" loading="lazy"> -->
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/model">Predict</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/visuals">Visuals</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/news_sentiment">News</a>
+                </li>
+                <!-- Add more navigation items here -->
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <!-- <div class="header">
+        <h1>Welcome to Investment Insight</h1>
+        <p>Your guide to smart investments.</p>
+    </div> -->
+
+    <!-- Content -->
+    <div class="container">
+        {% block body %}{% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+            <span class="text-muted">© 2023 Investment Insight</span>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>

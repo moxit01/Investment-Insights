@@ -1,0 +1,21 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <h1>Twitter Feeds</h1>
+
+    <form method="POST">
+        <label for="symbol">Symbol:</label>
+        <input type="text" id="symbol" name="symbol">
+        <input type="submit" value="Get Tweets">
+    </form>
+
+    {% for sentiment in sentiments %}
+    <p>{{ sentiment[0] }} ({{ sentiment[1] }})</p>
+    {% endfor %}
+</body>
+</html>
